@@ -1,0 +1,539 @@
+\documentclass[8pt,a4paper,oneside]{elsarticle}
+% \documentclass{article}
+%\usepackage{subfigure}
+\usepackage{layouts}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{layouts}
+\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{float}
+\usepackage{marginnote}
+\usepackage{blindtext}
+\usepackage{setspace}
+\usepackage{threeparttable}
+\usepackage[a4paper,left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.5cm]{geometry}
+\usepackage{IEEEtrantools}
+\usepackage{hyperref}
+%\usepackage{lineno,hyperref}
+%\modulolinenumbers[5]
+\usepackage[switch,pagewise]{lineno}
+%\linenumbers
+\usepackage{siunitx}
+\sisetup{%
+  inter-unit-product=\ensuremath{{}\cdot{}},
+  per-mode=symbol
+  }
+\usepackage[figuresleft]{rotating}
+\usepackage{placeins}
+\usepackage[absolute,overlay]{textpos}
+%\usepackage{subfig}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{amsmath,empheq}
+\usepackage{amsmath}            % Para las referencias a ecuaciones con \eqref
+\usepackage{ragged2e}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+%\usepackage{mathptmx} % mathptmx – Use Times as default text font, and provide maths support
+\usepackage[table,xcdraw]{xcolor} %Tables
+\usepackage{array,multirow}
+\usepackage{booktabs}
+\definecolor{mycolor}{HTML}{EFEFEF}
+\usepackage{amsmath,amsfonts,amssymb,amsthm, bm}
+\usepackage{graphicx, nicefrac}
+\usepackage{stackengine}
+\usepackage{csquotes}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{makecell}
+\usepackage{textcomp} % This package is needed to use the symbols
+
+\newcommand{\xmark}{\text{\texttimes}}
+\usepackage[nocfg]{nomencl}
+
+\usepackage{ifthen}
+\renewcommand\nomgroup[1]{%
+  \ifthenelse{\equal{#1}{A}}{%
+    \item[\textbf{Acronyms}]}{%                A - Acronyms
+  \ifthenelse{\equal{#1}{R}}{%
+    \item[\textbf{Roman Symbols}]}{%           R - Roman
+  \ifthenelse{\equal{#1}{G}}{%
+    \item[\textbf{Greek Symbols}]}{%           G - Greek
+  \ifthenelse{\equal{#1}{S}}{%
+    \item[\textbf{Superscripts}]}{%            S - Superscripts
+  \ifthenelse{\equal{#1}{U}}{%
+    \item[\textbf{Subscripts}]}{%              U - Subscripts
+  \ifthenelse{\equal{#1}{X}}{%
+    \item[\textbf{Other Symbols}]}{%           X - Other Symbols
+  {}}}}}}}}
+\renewcommand*{\nompreamble}{\markboth{\nomname}{\nomname}}
+\newcommand{\nomunit}[1]{%
+  \renewcommand{\nomentryend}{\hspace*{\fill}#1}%
+  }
+  \usepackage{graphicx}  % for including figures
+\usepackage{hyperref}  % for hyperlinks
+\usepackage{soul}
+\usepackage{xcolor,soul}
+\sethlcolor{white}  %%%%%%%%%%%%%%%%%%%%
+\usepackage{float}
+\usepackage{comment}
+\usepackage{tabularx}
+\usepackage{array, makecell} 
+\usepackage[inline]{enumitem}
+%\DeclareMathOperator*{\argmin}{arg\,min}
+\RequirePackage{ifthen}
+\usepackage{xpatch}
+\newlength{\nomitemorigsep}
+\setlength{\nomitemorigsep}{\nomitemsep}
+\setlength{\nomitemsep}{-\parsep}
+\renewcommand{\nomgroup}[1]{%
+\ifthenelse{\equal{#1}{A}}{\item[\textbf{\textit{Acronyms}}]}\\{
+\ifthenelse{\equal{#1}{B}}{\item[\textbf{\textit{Symbols}}]}{
+\ifthenelse{\equal{#1}{C}}{\item[\textbf{\textit{Subscripts}}]}{
+\ifthenelse{\equal{#1}{D}}{\item[\textbf{\textit{Superscripts}}]}{}}}}}
+
+\usepackage{tabularx,ragged2e,booktabs,caption}
+\usepackage[absolute,overlay]{textpos}
+\renewcommand\bibnumfmt[1]{{[#1]}}
+
+\journal{Journal of \LaTeX\ Templates}
+
+
+\bibliographystyle{elsarticle-num}
+
+
+
+\begin{document}
+\title{\hl{Applications of Machine Learning in The Protection of Microgrids}}
+
+\author[1]{Bassem Gehad Basher}
+\author[1]{Mohammad E. M. Rizk}
+\author[1,2]{Sayed Abulanwar\corref{cor}}
+\ead{abulanwar@mans.edu.eg}
+\author[1,3]{Abd El Hady Tolba Mohamed Ghanem\corref{cor}}
+\ead{}
+\address[1]{Electrical Engineering Department, Faculty of Engineering, Mansoura University, 35516, Mansoura, Egypt}
+% \address[2]{College of Electrical Engineering, Sichuan University, Chengdu, China}
+
+\address[2]{Horus University-Egypt}
+\cortext[cor]{Corresponding author}
+\address[3]{Electrical Engineering Department, Faculty of Engineering, Mansoura University}
+\cortext[cor]{Corresponding author}
+\begin{abstract}
+Microgrid protection is a crucial research area in the development of microgrids. As microgrids become more prevalent, it is important to ensure that they are protected from faults and other potential issues. Faults in microgrids can lead to power outages, equipment damage, and safety hazards. Therefore, it is essential to develop reliable and precise protection schemes for microgrids. In recent years, researchers have explored various approaches to microgrid protection, including adaptive protection and AC microgrid protection. This paper proposes a novel approach for a full station protection scheme in microgrids, which includes fault detection, fault classification, and determination of faulty feeder. The proposed approach is based on the discrete wavelet transform (DWT),  decision tree ensemble (DTE) algorithm, and linear discriminant analysis (LDA) algorithm.The system model being tested was created using Matlab/Simulink software and is based on a real system. The training and testing of the algorithms were developed and evaluated using MATLAB tools.The accuracy of the proposed method is demonstrated in the paper, indicating that it can be used to modernize the current protection apparatus in preparation for the eventual implementation of an advanced microgrid station protection system.
+
+ 
+
+\end{abstract}
+
+% Note that keywords are not normally used for peerreview papers.
+\begin{keyword}
+Fault localization algorithm, decision tree ensemble algorithm, linear discriminant analysis algorithm, Fault classification, Faulty feeder identification, Discrete wavelet transform.
+\end{keyword}
+
+\maketitle
+
+\section{Introduction}
+Revolution in technology have opened the door for the usage of new resources in electricity generation near customer endpoint, which created distributed generation approach. A highly effective way to integrate distributed generation into a power system is through microgrid which consist of distributed generator (DG) or more that provide the needed generation for the load of this part of the system \cite{Rath_Panda_Ray_Mohanty_2021_1}, \cite{Review_and_Analysis_of_Existing_Protection_3}, \cite{9179273_4}and is
+connected to the main grid through one point, the point of common coupling (PCC). However, a static switch installed close to PCC on the secondary side of the main transformer should be used to immediately disconnect the microgrid from the main grid if a fault arises in the microgrid, hence a trustworthy station protection scheme should be used to classify and locate the fault and activate this circuit breaker. However, creating such protection scheme is one of the main challenges due to the nature of microgrid as in \cite{Gopalan_Sreeram_Iu_2014_2}, \cite{9648165_5}, \cite{KENNEDY20161308_6} and \cite{BREARLEY2017988_7}. With the significant improvements in the field of signal processing and machine learning algorithms, schemes and strategies of protection of microgrid became attraction source for researchers who continuously try to improve the reliability of microgrid systems and availability of power supply for end users.
+
+
+Hence, researchers started to investigate this area using many methods, where (DWT) became a promising tool in the purpose of generating data required for machine learning algorithms like in \cite{9285101_9} where DWT generated the required data for CNN and LSTM and showed promising results in fault classification in microgrid and Habana \cite{hubana9066305_10} where ANNs based on DWT was able to detect and classify and locate faults
+in microgrid with high accuracy. In \cite{8759044_11}, a station microgrid protection scheme was proposed that used ANN and DWT as a feature extraction tool due to its ability to instantly locate faults.  Because of its learning ability and simplicity, ANNs were used in\cite{hubana9066305_10}to create a full station protection scheme using voltage and current signals from all feeders of microgrid and
+\cite{8759044_11} near PCC. In \cite{8759044_12} wavelet packet transform and radial forward basis neural network for microgrid protection.
+in \cite{10.1007/978-3-030-02574-8_10_13} HHT and ANN were used to classify HIF in distribution network.  DWT and DT were used in \cite{10.1109/tsg.2015.2487501_14} to detect and classify faults. ELTD were used in \cite{10.1109/ipaps52181.2020.9375534_15} to deploy two classifiers the first is to assign relay role assignment and the second is for faulted phase determination with accuracy of 93%.
+In another work \cite{10.1109/jsyst.2014.2380432_16}, the authors used DFT preprocessor to extract sensitive features of current and voltage of both ends of each feeder in the microgrid that provided high accuracy. In \cite{10.1109/tie.2017.2726961_17} authors used semi-supervised DT and KNN and DWT to extract fault features. However, very few researchers have implemented the full station protection of the microgrid with functionalities that include detection and classification of faults, isolation of the faulty feeder and fault location estimation. Therefore, it is
+justified to further explore the area of an affordable, reliable and intelligent microgrid station protection system that remains one of the highest priorities in this field.Because of all the above, in this paper, a new method for microgrid station protection is proposed. This method is developed and tested in the MATLAB Simulink environment. The following section will provide the theoretical background of the proposed method, followed by insight into the methodology, the results, and, lastly, the conclusion.
+\section{Theoretical Background}\label{Theoretical Background}
+In this paper, DWT was used to create the input signals in order to  train the algorithms, as it has superior feature extraction ability for non-stationary signals with transients and rapid changes in frequency over Fourier transform. Decision tree ensemble and Discriminant algorithms were used as the predictive models for this research, Therefore a brief theoretical background will be provided in the following subsections.
+
+\subsection{Discrete Wavelet Transformation}
+In this paper, Discrete wavelet transformation (DWT) was used to create the needed inputs as it has superior feature extraction ability above Fourier Transform as in \cite{10.1109/99.388960_intro_to_wt_iaddedallthetxt_24} as it captures the local spectral and temporal details at the same time which gives it the ability to decompose the signal into wavelets that provide a more detailed and concise representation for the signal in both time and frequency domain making the DWT a well-suited tool to capture the changes and transients in the frequency over time unlike Fourier transform which captures the global frequency information making it more suited to use with stationary signals with constant frequency\cite{10.48550/arxiv.2101.06707_25}.
+ Discrete Wavelet Transform (DWT) is a mathematical tool that is used to decompose a given signal into various resolution levels as in Fig. \ref{0_fig:1_wavelet} and  also used to reconstruct the original signal again from the decomposed levels so that removing the noise from the original signal what makes it an efficient tool to analyze power system signals and provide the important insights for researchers\cite{10.14569/ijacsa.2019.0100348_26}.
+ DWT is sufficient in decomposing and reconstructing most power quality disturbances.
+DWT provides enough information and offers high reduction in the computational time.
+ The mathematical equation for DWT is given as:\newline\vspace{5px}
+   $DWT_{*}(m, n)=\int_{-\infty}^{\infty} x(t) \psi_{*}^{*}(t) dt$.\newline
+   Here, $x(t)$ is the input signal, $\psi_{*}^{*}(t)$ is the wavelet function, and $m$ and $n$ are the translation and scaling parameters, respectively.\newline
+ The wavelet function $\psi_{\alpha,}(t)$ is defined as:\newline
+       $\psi_{\alpha,}(t)=a_{q}^{-*} \psi\left(\frac{t-n b_{i} a_{i}^{*}}{a_{q}^{*}}\right)$.\newline
+  Here, $a$ is the scaling factor, $b$ is the translation factor, and $q$ is the wavelet index.
+ The scaling factor $a$ is given as $a=a_{q}^{*}$, and the translation factor $b$ is given as $b=n b_{q} a_{9}^{*}$.
+The DWT equation is used to obtain the characteristic vectors of power quality disturbances, which are then used for classification using Support Vector Machines (SVMs).
+\subsection{Decision Tree Ensemble} 
+
+The realm of machine learning and data mining has seen the emergence of ensemble decision tree techniques, captivating researchers' attention due to their potential in bolstering predictive accuracy across diverse domains. Ensemble decision tree techniques involve making several decision trees so that their result output will be taken and combined to create the most robust and accurate predictive model. Among these techniques, Random Forest, for instance, crafts a collection of decision trees using specialized training data samples and randomized feature subsets \cite{breiman2001random_29}.
+In a typical Random Forest ensemble, individual decision trees are generated using bootstrapped training data samples and randomized feature subsets. The final prediction is obtained by aggregating the predictions of each tree, which is given by the equation:\newline
+\(\hat{y}(x) = \frac{1}{|T|} \sum_{t=1}^{|T|} f_t(x)\).
+This equation defines the ensemble prediction in a Random Forest. The final prediction \(\hat{y}(x)\) is obtained by averaging the predictions of individual decision trees (\(f_t(x)\)) in the ensemble (\(T\)).\newline
+Similarly, bagging (Bootstrap Aggregating) which is a clever method in which we train several versions of a basic model on slightly different training sets All the predictions of the models are to be averaged and the final output prediction is produced. This team effort often leads to better predictions than relying on a single model.\newline
+The final prediction, symbolized as \(\hat{f}_{\text{bag}}(x)\), is formed by gathering votes from different versions of our basic model. It's like asking a group of friends for their opinions and then making a decision based on everyone's input.\newline
+In addition to that, Gradient Boosting, which is a method that builds decision trees sequentially by addressing errors from previous iterations, has demonstrated its influence in refining model performance \cite{friedman2001greedy_30}. Imagine a group of learners trying to solve a problem together. Every learner corrects the mistakes done by the previous learner. In the end, their effort of all the learners produces a solution that's often better than what any one of them could have achieved alone. That's the magic of Gradient Boosting—iteratively improving predictions by learning from past mistakes.\newline
+The magic formula \(F(x) = F_{k-1}(x) + \alpha_k h_k(x)\) captures how each learner's contribution is added to the existing solution. It's like a collaborative puzzle where each piece enhances the overall picture, resulting in a finely-tuned final solution. 
+
+Ensemble approaches effectively alleviate challenges like overfitting and instability that commonly plague individual decision trees, ultimately yielding models of increased reliability and robustness \cite{rokach2010ensemble_32}. The versatility of these techniques extends to applications in tasks such as pattern recognition, classification, and regression across varied domains. Comprehensive insights into ensemble decision trees and their pragmatic implications can be found in esteemed scientific journals. The works of Kuncheva and Rodríguez discuss the potential benefits of classifier ensembles, shedding light on their contributions \cite{kuncheva2007classifier_31}, while Rokach's exploration of ensemble-based classifiers provides a broader perspective \cite{rokach2010ensemble_32}. For a foundational grasp of ensemble methods, Zhou's book offers valuable insights into algorithms and real-world applications \cite{zhou2012ensemble_33}.
+
+In conclusion, ensemble decision tree techniques present powerful tools for refining predictive modeling in diverse domains.For all of that we used this technique in our paper to build a predictive model as it will take the output results of the DWT and use them for training to use them to build the model to predict the correct output of the tested cases whether it is a faulty feeder or the type of fault or the fault location in the feeder or to distinguish between faults and overloads.
+
+
+
+
+
+\subsection{Discriminant Algorithm}
+Researchers employ the power of machine learning techniques to uncover anomalies in time series data and effectively categorize diverse patterns.A noteworthy approach is the Discriminant Algorithm \cite{duda2000pattern_disc_duda_38}\cite{10.1016/c2009-0-27872-x_discrim_36}, which stands as a supervised learning technique employed to decipher patterns in data and differentiate between what's normal and what's not. This algorithm functions by discovering a hyperplane that effectively divides different classes. Intriguingly, this algorithm has demonstrated its prowess in identifying anomalies within both stationary and changing networks. It's also capable of handling complex, high-dimensional data while being relatively immune to disturbances and missing information.
+I apologize for the misunderstanding. Here's the revised paragraph with LaTeX equations:
+
+Linear Discriminant Analysis (LDA) is recognized for its pivotal role in classifying data into distinct categories. This technique involves understanding the data to identify a combination of features that effectively distinguish between these categories. The power of LDA lies in its ability to enhance the separation between different categories by adjusting the variance between them.
+
+To illustrate, consider a dataset containing samples and features grouped into distinct classes. The data matrix \(X\) has rows representing samples and columns representing features. Correspondingly, the label vector \(y\) assigns class labels to each sample.
+
+The LDA process unfolds as follows:
+
+1. Compute mean vectors for each class, denoted as \(\mu_i\):
+
+\[
+\mu_i = \frac{1}{n_i}\sum_{j=1}^{n_i} x_{ij}
+\]
+
+2. Calculate within-class scatter matrix, \(S_W\):
+
+\[
+S_W = \sum_{i=1}^k \sum_{j=1}^{n_i} (x_{ij} - \mu_i)(x_{ij} - \mu_i)^T
+\]
+
+3. Determine between-class scatter matrix, \(S_B\):
+
+\[
+S_B = \sum_{i=1}^k n_i(\mu_i - \mu)(\mu_i - \mu)^T
+\]
+
+where the overall mean vector, \(\mu\), is defined as:
+
+\[
+\mu = \frac{1}{n}\sum_{i=1}^k \sum_{j=1}^{n_i} x_{ij}
+\]
+
+4. Compute eigenvalues and eigenvectors of the matrix \(S_W^{-1}S_B\).
+
+5. Choose the \(k-1\) eigenvectors with the largest eigenvalues as discriminant vectors.
+
+6. Project the data onto the discriminant vectors:
+
+\[
+y = W^Tx
+\]
+
+Here, \(W\) represents the matrix of discriminant vectors, and \(x\) is a sample.
+
+7. Samples are classified based on the sign of \(y\).
+
+LDA emerges as a robust tool for data classification across categories, with significant applications in machine learning and pattern recognition.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+%two paragraphs for the same subsection :we need to choose one  as the best .
+???????????????????????????????????????????????????
+\textbf{Linear Discriminant Analysis (LDA):}
+Linear Discriminant Analysis stands as a cornerstone technique within the realm of pattern recognition and statistics, adeptly wielded for both dimensionality reduction and classification tasks. Its principal aim revolves around determining an optimal projection that maximizes inter-class distinctiveness while concurrently minimizing within-class variance\cite{duda2000pattern_disc_duda_38}\cite{10.1016/c2009-0-27872-x_discrim_36}. LDA endeavors to project the initial feature space into a lower-dimensional arena where class separability reaches its zenith.
+
+Given a dataset comprising features $X$ and corresponding class labels $y$, LDA endeavors to ascertain a linear transformation matrix $W$, effecting a mapping to a novel lower-dimensional space $Y$. The selection of transformation matrix $W$ is guided by the overarching objective of optimizing the ratio of between-class variance to within-class variance. The mathematical formulation encapsulates:
+
+1. \textbf{Within-Class Scatter Matrix ($S_w$):}
+   $S_w$ is computed as the summation across classes $C$ of the scatter within each class, quantified by $(x - m_i)(x - m_i)^T$, where $X_i$ denotes the set of samples for class $i$ and $m_i$ is the mean of class $i$.
+
+2. \textbf{Between-Class Scatter Matrix ($S_b$):}
+   The scatter between classes is encapsulated by $S_b$, determined as the sum of the product of sample count $n_i$ and the difference between class mean $m_i$ and overall mean $m$.
+
+3. \textbf{Fisher Criterion:}
+   The central maximization objective manifests in the Fisher criterion, epitomized by the ratio of between-class scatter to within-class scatter. Mathematically, it assumes the form $J(W) = \frac{\text{tr}(W^T S_b W)}{\text{tr}(W^T S_w W)}$, culminating in the optimal matrix $W$ attained through the generalized eigenvalue problem $S_b w = \lambda S_w w$.
+
+4. \textbf{Optimal Projection:}
+   The ultimate phase entails selecting columns of $W$ corresponding to the highest eigenvalues, constituting the optimal projection for data onto the lower-dimensional space $Y$.
+
+In essence, Linear Discriminant Analysis orchestrates the identification of the quintessential linear transformation $W$, endowing it with the potency to heighten class separability in the novel feature space $Y$, particularly propitious for classification endeavors.
+
+For a broader context and additional references, it's prudent to supplement this with relevant scholarly literature. Notably, Duda, Hart, and Stork's work \cite{duda2000pattern_disc_duda_38} provides a comprehensive exploration of pattern classification methods. Additionally, Fukunaga's work \cite{10.1016/c2009-0-27872-x_discrim_36} offers an insightful introduction to statistical pattern recognition.
+
+\section{Methodology} \label{Methodology}
+
+The electrical network model which was represented in this paper in Fig. \ref{0_fig:3_system} presents a part of a real isolated medium voltage distribution network from the Bosnia and Herzegovina distribution system \cite{hubana9066305_10}. The research was conducted using MATLAB/Simulink. Faults of AG, ABG and ABCG were simulated on feeder1, feeder2, feeder3 and feeder8 where feeder1 = 5.87 km, feeder2 = 0.95 km, feeder3 = 4.47 Km and feeder8 = 11.5 Km. The main network has a voltage of 35 KV and connected to a microgrid through two 35/10 KV transformers, the microgrid has eight 10 KV feeders, 12 buses and 10 transformers with transformation ratio of  10/.4 KV, the microgrid has four distributed generators (DGs). Measurements of voltage and current are performed at the point of common coupling (PCC), then sent to DWT technique to create inputs for ANN learning model only. 
+
+
+The proposed technique in this research applies different ranges of fault resistance values of 0 to 100 ohms also applies noise to the signal measured near the PCC point in the range of 21.96 to 50 decibels (dB) which simulates the real world electric power systems. The observed simulation in SIMULINK has a time frame window of .06 seconds. This research applies two different algorithms DTE and LDA for fault detection, faulty feeder determination, fault location in the faulted feeder and the discrimination between the overload and faults all these functions are trained and tested in MATLAB/SIMULINK and the models were developed in classification learner toolbox to assure the reliability and robustness of the proposed protection scheme.
+
+\subsection{Experimental Setup}
+
+The electrical microgrid model under testing is shown in Fig. \ref{0_fig:3_system} presents a part of a real isolated medium voltage distribution network from the Bosnia and Herzegovina distribution system. The research was conducted using MATLAB/Simulink (2021b) version. The voltage of the main network is 35 KV and the system frequency is 50 Hz, which is connected to microgrid through transmission line 1 and two 35/10 KV transformers. The microgrid has eight 10 KV feeders, 9 buses, seven 10/.4 KV transformers, the microgrid has four renewable energy distributed generators(DGs) and total load of 4,31 MW. 
+Voltage and current measurements are taken from PCC only. DWT as a signal processing technique and a feature extraction technique is used to process the signals to provide input for machine learning algorithms. The outputs of DWT will be used as input for machine learning algorithms that will classify faults and identify faulted feeder with high accuracy. On the incoming 35 KV side, there is a transmission line (TL1) connecting the main grid to the microgrid. The length of this transmission line is 1 km.
+In 10 KV side: faults resistances are changed randomly starting from 0 to 5 to \SI{100}{\ohm}, the output of the distributed generators varies to cover a wide range of possible operation conditions. The single-phase-ground faults (AG), phase-phase-ground faults (ABG) and three-phase faults (ABCG) are used as these faults represent nearly 85\%  of faults that occur in distribution system \cite{10.36478/jeasci.2019.10058.10066_18}. Faults are simulated on feeder1, feeder2 and feeder3 and at the end of feeder8 where the length of feeder1 is 5.87 km, feeder2 is 0.95 km, feeder3 is 4.47 km and feeder8 is 11.5 Km. Variable fault locations were simulated on each feeder, more precisely, in 19 locations across every feeder’s length.Noise in the range of 21.94 dB to 50 dB in signal-to-noise ratio (SNR) was added to the signals during simulation. Specifically, the noise level equivalent to 21.94 dB was chosen to reflect conditions resembling a Total Harmonic Distortion (THD) of 8\%. This particular THD value aligns with the stipulated criteria within the EN50160 standard that governs Medium Voltage (MV) networks\cite{hubana9066305_10}.In the overload scenario, the overload injected was chosen randomly in the range of 1 to 2 MW.
+ 
+\subsection{Data Preparation}
+
+After simulating different fault scenarios and injecting the load for overload condition, voltage and current waveforms are measured from PCC.As DWT showed much better results in localizing faults in time and frequency as in\cite{10.1109/poweri.2006.1632580_19}, Daubechies (DB4) level “4” is used as mother wavelet with sampling frequency of 3200 as DB4 is applied to these signals, and as a result, detailed and approximate coefficients are obtained, and then these coefficients are used as inputs for the machine learning models as training datasets
+as shown Table \ref{0_table1} and Fig. \ref{0_fig:2_signalsignatureComposition}.  
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{dwtfilterScreenshot - 8_4_2023 , 1_14_21 AM.pdf}
+    \caption{Four-Level wavelet decomposition of line current Ia.: D; A: High
+filter and low filter decomposition coefficients respectively.}
+    \label{0_fig:1_wavelet}
+\end{figure}
+\begin{table}[ht]
+\centering
+\caption{Four levels of decomposition are used in order to get the
+frequency bands shown in Fig. \ref{0_fig:1_wavelet}, Fig. \ref{0_fig:5_firstVoltageFaultAnalysis} and Fig. \ref{0_fig:6_firstCurrentFaultAnalysis}. Signature
+signal for each fault scenario such as in Fig. \ref{0_fig:7_AG_voltage_signatureSignal},Fig. \ref{0_fig:8_ABG_voltage_signatureSignal} and Fig. \ref{0_fig:9_ABCG_voltage_signatureSignal}
+are produced by composing the coefficients of each phase
+voltages and currents into one signature signal, as shown in
+Figure Fig. \ref{0_fig:10_AG_current_signatureSignal},Fig. \ref{0_fig:11_ABG_current_signatureSignal} and Fig. \ref{0_fig:12_ABCG_current_signatureSignal}.}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Detail level1 & Detail level2 & Detail level3 & Detail level4 & Approximation level 4\\
+\hline
+800 - 1600 Hz& 400 - 800 Hz & 200 - 400 Hz& 100 - 200 Hz & 50 - 100 Hz\\
+
+\hline
+\end{tabular}
+\label{0_table1}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{image_for_phaseTocoefficients.png}
+    \caption{Signal signature composed of four-level wavelet decomposition of current and voltage}
+    \label{0_fig:2_signalsignatureComposition}
+\end{figure}
+The system is simulated for .06 seconds window time frame and the final signature signal which is composed of 675 samples gives a good insight and perception about system behavior during the
+fault conditions as in Fig. \ref{0_fig:2_signalsignatureComposition} and Fig. \ref{0_fig:7_AG_voltage_signatureSignal}. This data will be used for the training process of the two models, the first is decision tree ensemble algorithm and the second is the discriminant analysis algorithm that will be used to make the predictive models which will provide functionalities of the full protection scheme of the microgrid. This signature signals present
+the input for the two machine learning algorithms which are developed, trained and tested using MATLAB software.The two methods will use holdout validation method with 20\% of the dataset. 
+Another scenario was taken into consideration: this scenario is the overload on the microgrid and the effect of this overload on the protection scheme the objective of this scenario is to evaluate whether the protection scheme will be able to discriminate between the signal signature of overload condition and the faults. 
+After simulating the faults on each one of the four
+feeders and simulating the overload on the microgrid, voltage and current waveforms are measured from
+PCC. Hence, DWT is applied to these signals, and as a
+result, detailed and approximated coefficients are obtained
+for each signal as shown in Fig. \ref{0_fig:5_firstVoltageFaultAnalysis} and Fig. \ref{0_fig:6_firstCurrentFaultAnalysis}. Four levels
+of decomposition are used in order to get the frequency
+bands we need to train the models, as shown in Fig. \ref{0_fig:1_wavelet} and Table \ref{0_table1}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.05\linewidth]{important/model2.png}
+    \caption{Test system}
+    \label{0_fig:3_system}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{important/flowChartForModels.png}
+    \caption{Flowchart for the procedure used in this paper, starting with measuring voltage and current at the Point of Common Coupling (PCC). From there, we move on to generating signature signals for each simulation. These signals are crucial. We then harness the power of datasets, using them for training and validation. After that, we put the models to the test with thorough testing. The results of this testing guide us in developing various models for our protection scheme.}
+    \label{0_fig:4_procedureOfModels}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{firstvoltageaayze.png}
+    \caption{Decomposition of (S) Voltage signal of phase A under AG fault condition
+using DWT producing approximate coefficient a4 and the relevant four detailed coefficients d1, d2, d3, and d4.}
+    \label{0_fig:5_firstVoltageFaultAnalysis}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{current1analyzw.png}
+    \caption{Decomposition of (S) Current signal of phase A under AG fault condition
+using DWT to produce approximate coefficient a4 and the relevant four detailed coefficients d1, d2, d3, and d4.}
+    \label{0_fig:6_firstCurrentFaultAnalysis}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.5\linewidth]{important/firsttypeFault.png}
+    \caption{Voltage signature signal of the three-phase voltages A, B and C under
+AG fault condition after being processed by DWT and combining the coefficients to approximate coefficient (a4) and the relevant four detailed coefficients d1, d2, d3, and d4 of each phase voltage signal as per the flowchart in \ref{0_fig:2_signalsignatureComposition} }
+    \label{0_fig:7_AG_voltage_signatureSignal}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.5\linewidth]{important/secodfault.png}
+    \caption{Voltage signature signal of the three-phase voltages A, B and C under
+ABG fault condition after being processed by DWT and combining the coefficients to approximate coefficient (a4) and four detailed coefficients d1, d2, d3, and d4 of each phase voltage signal as per the flowchart in \ref{0_fig:2_signalsignatureComposition}}
+    \label{0_fig:8_ABG_voltage_signatureSignal}
+\end{figure}
+A signature signal for each simulation scenario is created by
+composing the coefficients of each phase voltages and
+currents into one signature signal, signature signal = [aA4 + dA4 + dA3 + dA2 + dA1 + aB4 + dB4 + dB3 + dB2 + dB1
++ aC4 + dC4 + dC3 + dC2 + dC1] where a stands for approximation coefficient, d stands for detailed coefficient, A, B and C stand for phase, 1, 2, 3, and 4 stand for level of decomposition as shown in Table \ref{0_table1} Fig. \ref{0_fig:7_AG_voltage_signatureSignal},Fig. \ref{0_fig:8_ABG_voltage_signatureSignal}
+and Fig. \ref{0_fig:9_ABCG_voltage_signatureSignal}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{important/thirdfault.png}
+    \caption{Voltage signature signal of the three-phase voltages A, B and C under
+ABCG fault condition after being processed by DWT and combining the coefficients to approximate coefficient (a4) and four detailed coefficients d1, d2, d3, and d4 of each phase voltage signal as per the flowchart in \ref{0_fig:2_signalsignatureComposition}}
+    \label{0_fig:9_ABCG_voltage_signatureSignal}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{important/firstCurrentFault.png}
+    \caption{Current signature signal of the three-phase currents A, B and C under
+AG fault condition after being processed by DWT and combining the coefficients to approximate coefficient (a4) and four detailed coefficients d1, d2, d3, and d4 of each phase current signal as per the flowchart in \ref{0_fig:2_signalsignatureComposition}}
+    \label{0_fig:10_AG_current_signatureSignal}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{important/secondFaultcurrent.png}
+    \caption{Current signature signal of the three-phase currents A, B and C under
+ABG fault condition after being processed by DWT and combining the coefficients to approximate coefficient (a4) and four detailed coefficients d1, d2, d3, and d4 of each phase current signal as per the flowchart in \ref{0_fig:2_signalsignatureComposition}}
+    \label{0_fig:11_ABG_current_signatureSignal}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{important/thirdCurrentFault.png}
+    \caption{Current signature signal of the three-phase currents A, B and C under
+AG fault condition after being processed by DWT and combining the coefficients to approximate coefficient (a4) and four detailed coefficients d1, d2, d3, and d4 of each phase current signal as per the flowchart in \ref{0_fig:2_signalsignatureComposition}}
+    \label{0_fig:12_ABCG_current_signatureSignal}
+\end{figure}
+These datasets of signature signals will serve as the foundation for the training phase of the aforementioned algorithms. Through this training process, predictive models will be constructed, imbuing them with the capabilities essential for the realization of the microgrid station protection scheme. 
+
+\subsection{Computational Procedure}
+Two machine learning algorithms Utilized DWT signal
+processing as a feature extraction tool For the reason that the proposed decision tree ensemble (DTE) and discriminant analysis (LDA) models need qualified inputs so that it will be in a position to develop accurate predictive model to
+accurately classify faults, the fault location, determine faulty feeder and to determine whether the signal represents the system during fault or overload,
+Regardless of how much power is being generated, the noise within the microgrid, the resistance in case of faults, and where the feeder is located all have a significant impact. Once we're done with the training, validation, and testing of the models, these models can be put to good use. They'll help us accurately identify different types of faults, figure out which feeder is causing the trouble, pinpoint exactly where a fault occurred in the feeder, and even tell the difference between faults and overloads in the microgrid.
+The flowchart \ref{0_fig:4_procedureOfModels} demonstrate the procedure applied in this research starting with measuring voltage and current at
+PCC then, DWT is applied for these signals after that, the
+training and validation process for DTE and LDA models, in the end, the testing of the two models to measure their accuracy.
+For training purpose, 75\% of data were used, 20\% of data
+were used for validation and the remaining 5\% were used
+for testing.
+ The models used for fault classification takes current-based signature signals as input
+and has three possible outputs (A-G, AB-G and ABC-G fault) as shown in Fig. \ref{0_fig:13_faultClassificationFlowChart} similarly, it uses voltage-based signature signals as input for faulty feeder determination thus outputs four possible results (feeder1, feeder2, feeder3 and feeder4) as shown in Fig. \ref{0_fig:14_faultyFeederDeterminationFlowChart}.
+In the process of locating faults within the affected feeder, the model takes the signature signals as input. These signals are then used by the model to generate outputs. Interestingly, there are a total of 19 possible outputs, where each point corresponds to a 5\% increment along the length of the feeder, progressing consecutively.Similarly, for the purpose of discrimination between the overload and faults, the two models function comparably to determine whether there is a fault or not. They take voltage-based signature signals as input and then produce two possible outcomes: one indicating the presence of a fault and the other indicating the absence of a fault.
+ 
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.5\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{important/faultClassification.png}
+        \caption{Fault Classification flowchart}
+        \label{0_fig:13_faultClassificationFlowChart}
+    \end{subfigure}%
+    \begin{subfigure}{0.5\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{important/FaultyFeeder.png}
+        \caption{Faulty feeder determination flowchart}
+        \label{0_fig:14_faultyFeederDeterminationFlowChart}
+    \end{subfigure}
+    \caption{Two flow charts for fault classification and faulty feeder discrimination}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{important/FaultandNoFault.png}
+    \caption{Flow chart for discrimination between fault and overload }
+    \label{0_figure:21_faultandNoFaultOverlOad}
+\end{figure}
+\section{RESULTS AND DISCUSSION}
+ In \cite{hubana9066305_10} the author used (4815) scenarios for the fault
+classification and faulty feeder selection, 75\% of the data
+was used for training, 15\% for validation and 10\% for
+testing expecting the results to be 93\% for fault
+classification and 97\% for faulty feeder.
+
+ The proposed scheme in this research followed the
+procedure described in previous sections. Large number of
+simulation scenarios are provided, more precisely 2000
+scenarios for the fault classification and faulty feeder
+selection, fault localization and discrimination between the overload and faults, in this research 75\% of the dataset was used for training, 20\% for validation and 5\% for testing.
+The results were highly promising and indicative of success. The data collected and processed and then used to build predictive models revealed a significant improvement in the outcomes of the intervention. 
+- For the fault types classification, the two models underwent assessment:
+LDA model exhibited the following results:
+Validation: Achieved precision of 88.6%
+Testing: Demonstrated precision of 89%
+
+On the other hand, DTE displayed the following outcomes:
+Validation: Attained a perfect precision of 100%
+Testing: Also achieved a perfect precision of 100%
+
+-in faulty feeder determination:
+to evaluate accuracy through a discriminant algorithm. The validation process yielded an impressive score of 95.8\%, while during the testing phase, the accuracy remained high at 93.5\%. The other algorithm, DTE, delivered remarkable outcomes, achieving a validation score of 98\% and slightly dipping to 97\% accuracy during the subsequent testing phase.
+
+-in fault localization in the faulted feeder:
+  For the discriminant algorithm:
+In the first line, the validation accuracy was 98.9\%, and during testing, it achieved a perfect 100\% accuracy.
+In the second line, the validation accuracy was 96.8\%, while the testing accuracy reached 96.7\%.
+Lastly, the third line had a validation accuracy of 96.8\%, and again, during testing, it achieved a perfect 100\% accuracy.
+  For the DTE algorithm:
+In the first line, the validation accuracy was 95.7\%, and during testing, it achieved a perfect 100\% accuracy.
+In the second line, the validation accuracy was 72.3\%, while the testing accuracy reached 90\%.%% wait for
+Lastly, the third line had a validation accuracy of 90.4\%, during testing, it achieved 96.7\% accuracy.
+
+-in the discrimination between over load and faults: 
+Two models were used the discriminant algorithm scored validation:99.1\% while in testing it brought 98\% accuracy.The other algorithm, DTE, achieved 100\% Validation and 98.8\% accuracy in testing.
+Subsequently, we are prepared to present an array of figures, showcasing a series of plots that exemplify our research findings. In this particular instance, we are focusing on a pivotal case study within our investigation—the fault localization within Feeder 1. This illustration will underscore the efficacy of our devised models, namely the LDA and DTE algorithms, in accurately addressing the task of fault localization.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{important//firstlinefaultslocalization/m1scatter.png}
+    \caption{Presented here is a scatter plot showcasing the dataset employed in training our models. This dataset captures simulations in which 'Feeder1' was subjected to various faults along its length. Each individual observation within the dataset corresponds to a signature signal generated through the procedure expounded upon in the preceding sections.}
+    \label{0_fig:15_scatterPlotModel 1}
+\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.5\linewidth]{important/firstlinefaultslocalization/m2scatter.png}
+%     \caption{Enter Caption}
+%     \label{0_fig:16_scatterPlotModel 2}
+% \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{important//firstlinefaultslocalization/m1ce.png}
+    \caption{The depicted figure illustrates the intricacies of the training process undertaken for the LDA model. Notably, this process yielded remarkable success, evidenced by the attainment of a minimum classification error of zero. For a comprehensive understanding of the elements represented within the plot, please refer to the legend as depicted in Fig. \ref{0_figure:legend}. }
+    \label{0_figure:mode_l_1miniClassificationError}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{important//firstlinefaultslocalization/m2ce.png}
+    \caption{The displayed figure provides a visual representation of the intricate details encompassing the training process of the DTE model, which exhibits a commendable minimum classification error of 0.043. To gain a comprehensive grasp of the components depicted within the plot, I encourage you to consult the legend featured in Fig. \ref{0_figure:legend}.}
+    \label{0_figure:mode_2_1miniClassificationError}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.25\linewidth]{important/legend.png}
+    \caption{This is the legend for the minimum classification error plots}
+    \label{0_figure:legend}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{important/firstlinefaultslocalization/m1traincm.png}
+    \caption{The elucidating confusion matrix illustrates the validation outcomes of the LDA model. Employing the holdout validation methodology, 20\% of our dataset was dedicated to this process. Remarkably, the results showcased an impeccable 100\% accuracy, underscoring the robustness of our LDA model. }
+    \label{0_fig:17_model1traincm}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{important/firstlinefaultslocalization/m2traincm.png}
+    \caption{The illuminating confusion matrix delineates the validation outcomes of the DTE model. Executing the holdout validation methodology, precisely 20\% of our meticulously assembled dataset was meticulously allocated for this validation endeavor. Remarkably, the resulting accuracy achieved a notable 95.7\%, profoundly affirming the inherent strength and resiliency of our DTE model.l. }
+    \label{0_fig:18_model2traincm}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{important/firstlinefaultslocalization/m1testcm.png}
+    \caption{The elucidating confusion matrix illustrates the testing outcomes of the LDA model. 5\% of our dataset was dedicated to this process. Remarkably, the results showcased an impeccable 100\% accuracy, underscoring the robustness of our LDA model.
+}
+    \label{0_fig:19_model1testcm}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{important/firstlinefaultslocalization/m2testcm.png}
+    \caption{The elucidating confusion matrix illustrates the testing outcomes of the DTE model. 5\% of our dataset was dedicated to this process. Remarkably, the results showcased an impeccable 100\% accuracy, underscoring the robustness of our DTE model.
+}
+    \label{0_fig:20_model2testcm}
+\end{figure}
+
+
+\section{CONCLUSION} \label{CONCLOUSION}
+Protection within microgrids emerges as a vital domain, commanding the unwavering attention of researchers. Its significance lies in the pivotal role it plays in ensuring the seamless flow of power to the end user. Our research journey entailed a deep dive into a diverse spectrum of scenarios, each adorned with its own intricate nuances. Embarking from the outset, we meticulously scrutinized an expansive dataset, encompassing a total of 25,000 simulation scenarios. These scenarios were meticulously segmented into smaller, manageable units to foster deeper insight. Regrettably, these initial explorations fell short of yielding the anticipated outcomes we aimed for. Contemplating these outcomes, we embarked on a methodical realignment of our strategy. With meticulous precision, we tailored a refined dataset, embracing a selective 2,000 simulation scenarios that catered to a more concentrated inquiry. This shrewd adjustment served as a linchpin, guiding us towards the triumphant realization of our envisioned scheme. The iterative utilization of this dataset stands as an eloquent testament to the value of systematic fine-tuning, navigating us steadfastly to a solution that marries precision with effectiveness.
+
+Within this paper, we harnessed the power of DTE and LDA algorithms, combined with DWT, to orchestrate a comprehensive microgrid protection scheme. The machine learning algorithms explored earlier underwent rigorous testing across a diverse range of scenarios. These scenarios spanned various conditions, securing that our proposed schemes effectively embraced a wide gamut of potential operational contexts. Delving into the performance of DTE and LDA, it's apparent that DTE excels in fault type classification and the determination of faulted feeders. In contrast, the LDA algorithm exhibits prowess in scenarios involving fault localization and the nuanced differentiation between overloads and faults. Consequently, the union of these models emerges as a promising evolution within the existing microgrid protection paradigms.
+
+Charting the path forward, our future research endeavors will extend to encompass an even more comprehensive spectrum of potential operating conditions, safeguarding against false triggers. We aim to forge a complete station protection scheme, encompassing fault detection, classification, identification of faulty feeders, and precise fault location. As a part of this journey, we're poised to explore advanced machine learning techniques that harness the power of neural networks and deep learning architectures. Additionally, we are intrigued by the prospects of leveraging real-time data streams to enhance the responsiveness of our protection scheme. Furthermore, we anticipate delving into the synergy of multiple protection schemes to create an integrated, foolproof defense against diverse anomalies. These future explorations underscore our unwavering commitment to enhancing the reliability and effectiveness of microgrid protection strategies.
+
+
+
+
+
+
+
+\FloatBarrier
+\bibliography{References}
+\end{document}
